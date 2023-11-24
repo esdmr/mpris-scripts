@@ -21,7 +21,7 @@ class ScriptBackend:
         self._supports_multi = supports_multi
 
     def get_state(self) -> PlayState:
-        if self.get_current().process is None:
+        if not self.get_current().is_running():
             return PlayState.STOPPED
         elif self.get_current().paused:
             return PlayState.PAUSED
@@ -42,6 +42,9 @@ class ScriptBackend:
 
     def set_event_adapter(self, event: "EventHandler"):
         self._event = event
+
+        for i in self._scripts:
+            i.event = event
 
     def _set_index(self, val: int):
         if not self._supports_multi:
