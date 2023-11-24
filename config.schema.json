@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"title": "MPRIS Scripts config",
+	"properties": {
+		"$schema": true,
+		"scripts": {
+			"type": "array",
+			"title": "list of scripts",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"title": "name of script"
+					},
+					"args": {
+						"type": "array",
+						"title": "arguments of script",
+						"items": {
+							"type": "string"
+						},
+						"minItems": 1
+					}
+				},
+				"required": [
+					"name",
+					"args"
+				],
+				"default": {
+					"name": "",
+					"args": [
+						""
+					]
+				},
+				"additionalProperties": true
+			}
+		},
+		"supports_pausing": {
+			"type": "boolean",
+			"title": "use SIGSTOP to pause and SIGCONT to resume",
+			"description": "disable if client does not have a stop button"
+		},
+		"supports_multi": {
+			"type": "boolean",
+			"title": "support running multiple scripts at the same time",
+			"description": "disable to stop the current script when switching"
+		}
+	},
+	"required": [
+		"scripts"
+	],
+	"default": {
+		"scripts": []
+	},
+	"additionalProperties": false
+}

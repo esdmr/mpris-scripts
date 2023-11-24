@@ -1,0 +1,31 @@
+{
+	"$schema": "./config.schema.json",
+	"scripts": [
+		{
+			"name": "xcalc",
+			"args": [
+				"xcalc"
+			]
+		},
+		{
+			"name": "xclock",
+			"args": [
+				"xclock"
+			]
+		},
+		{
+			"name": "xlogo",
+			"args": [
+				"xlogo"
+			]
+		},
+		{
+			"name": "glxgears",
+			"args": [
+				"glxgears"
+			]
+		}
+	],
+	"supports_pausing": true,
+	"supports_multi": true
+}

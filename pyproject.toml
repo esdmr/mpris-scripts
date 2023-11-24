@@ -1,0 +1,12 @@
+
+[project]
+name = "mpris-scripts"
+version = "1.0.0"
+description = "Run scripts via MPRIS/DBUS media control"
+authors = [{ name = "esdmr", email = "esdmr0@gmail.com" }]
+dependencies = ["mpris-server>=0.8.1"]
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[tool.pyright]
+extraPaths = ["mpris_scripts", "__pypackages__/3.12/lib"]
